@@ -26,11 +26,11 @@ void work() {
     process("A1", 1);
     process("A2", 1);
 
-    futureB.get();
+    futureB.wait();
 
     process("D", 1);
     
-    futureC.get();
+    futureC.wait();
 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed = end - start;
